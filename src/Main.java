@@ -1,7 +1,10 @@
+import com.bridgelabz.gamblingstimulation.Gambling;
+
 public class Main {
     public static void main(String[] args)
     {
-        System.out.println("Hello");
+        Gambling ob1 = new Gambling();
+        ob1.probablity();
 
     }
 }
