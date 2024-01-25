@@ -5,20 +5,25 @@ public class Gambling {
 
     int Stack_Per_Day = 100;
     int Bet_Every_Game = 1;
-    public void limit(){
-        int No_Of_Stock = 40;
-        int Maximum_Loose_limit = Stack_Per_Day/2;
-        int Maximum_Win_limit = Stack_Per_Day + (50/100);
-        if (No_Of_Stock>=Maximum_Loose_limit){
-            System.out.println("Resign Gambling");
-        }
-        else if (No_Of_Stock <=Maximum_Win_limit) {
-            System.out.println("Resign Gambling");
-        }
-        else{
-            System.out.println("Continue Gambling");
-        }
+    int Days = 20;
 
+
+    public void wonorloss(){
+        Random random = new Random();
+        int Random_Win_Loss;
+        int Probablity_Amount;
+        for(int i =1;i<21;i++){
+            Random_Win_Loss = random.nextInt(2);
+            Probablity_Amount = random.nextInt(100);
+            if(Random_Win_Loss == 1){
+
+                System.out.println("Day "+i+": "+"Profit of "+Probablity_Amount);
+            }
+            else{
+                System.out.println("Day "+i+": "+"Loss of "+Probablity_Amount);
+            }
+
+        }
     }
 
 }
