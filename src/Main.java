@@ -6,6 +6,5 @@ public class Main {
         Gambling ob1 = new Gambling();
         ob1.wonorloss();
 
-
     }
 }
