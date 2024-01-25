@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args)
     {
         Gambling ob1 = new Gambling();
-        ob1.probablity();
+        ob1.limit();
+
 
     }
 }
