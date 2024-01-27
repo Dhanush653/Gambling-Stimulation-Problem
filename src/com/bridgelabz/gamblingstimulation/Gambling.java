@@ -14,28 +14,26 @@ public class Gambling
         Random random = new Random();
         int Random_Win_Loss;
         int Probablity_Amount;
-        int Max_profit = 0;
-        int Max_loss = 0;
-        int Day_max_profit = 0;
-        int Day_max_loss = 0;
+        int Total_Amound_Win = 0;
+        int Total_Amount_Loss = 0;
+        int Total_amount;
         for(int i =1;i<=Days;i++){
             Random_Win_Loss = random.nextInt(2);
             Probablity_Amount = random.nextInt(Stack_Per_Day);
             if(Random_Win_Loss == 1){
-                if(Max_profit < Probablity_Amount){
-                    Max_profit = Probablity_Amount;
-                    Day_max_profit = i;
-                }
+                Total_Amound_Win += Probablity_Amount;
             }
             else{
-                if(Max_loss < Probablity_Amount){
-                    Max_loss= Probablity_Amount;
-                    Day_max_loss = i;
-            }
+                Total_Amount_Loss += Probablity_Amount;
             }
         }
-        System.out.println("Maximum Profit of "+Max_profit+" On Day: "+Day_max_profit);
-        System.out.println("Maximum Loss of "+Max_loss+" On Day: "+Day_max_loss);
+        Total_amount = (Total_Amound_Win-Total_Amount_Loss);
+        if(Total_Amound_Win > Total_Amount_Loss){
+            System.out.println("You Have A Profit Of "+Total_amount+"$ So You Can Continue Next Month");
+        }
+        else{
+            System.out.println("You Have A Loss Of "+Total_amount+"$ So You Should Stop Gambling");
+        }
     }
 
 }
