@@ -14,26 +14,28 @@ public class Gambling
         Random random = new Random();
         int Random_Win_Loss;
         int Probablity_Amount;
-        int Total_Amound_Win = 0;
-        int Total_Amount_Loss = 0;
+        int Max_profit = 0;
+        int Max_loss = 0;
+        int Day_max_profit = 0;
+        int Day_max_loss = 0;
         for(int i =1;i<=Days;i++){
             Random_Win_Loss = random.nextInt(2);
             Probablity_Amount = random.nextInt(Stack_Per_Day);
             if(Random_Win_Loss == 1){
-                Total_Amound_Win += Probablity_Amount;
+                if(Max_profit < Probablity_Amount){
+                    Max_profit = Probablity_Amount;
+                    Day_max_profit = i;
+                }
             }
             else{
-                Total_Amount_Loss += Probablity_Amount;
+                if(Max_loss < Probablity_Amount){
+                    Max_loss= Probablity_Amount;
+                    Day_max_loss = i;
             }
-
+            }
         }
-        int Total_amount = (Total_Amound_Win-Total_Amount_Loss);
-        if(Total_amount > 0){
-            System.out.println("The Total Profit is " + Total_amount);
-        }
-        else{
-            System.out.println("The Total Loss is " + Total_amount);
-        }
+        System.out.println("Maximum Profit of "+Max_profit+" On Day: "+Day_max_profit);
+        System.out.println("Maximum Loss of "+Max_loss+" On Day: "+Day_max_loss);
     }
 
 }
